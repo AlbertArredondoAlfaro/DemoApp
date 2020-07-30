@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -97,7 +97,6 @@
 				5FB30341CA4AB760D18570CD /* Pods-DomestikaTrailersTests.debug.xcconfig */,
 				4993FFB200C35E0B83F68848 /* Pods-DomestikaTrailersTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -128,9 +127,7 @@
 			children = (
 				7F9852CD24D2A4CC00D8E1FC /* AppDelegate.swift */,
 				7F9852D124D2A4CC00D8E1FC /* ViewController.swift */,
-				7F9852D624D2A4CD00D8E1FC /* Assets.xcassets */,
-				7F9852D824D2A4CD00D8E1FC /* LaunchScreen.storyboard */,
-				7F9852DB24D2A4CD00D8E1FC /* Info.plist */,
+				7F9852FD24D2AC4100D8E1FC /* Resources */,
 			);
 			path = DomestikaTrailers;
 			sourceTree = "<group>";
@@ -151,6 +148,16 @@
 				7F9852F124D2A4CD00D8E1FC /* Info.plist */,
 			);
 			path = DomestikaTrailersUITests;
+			sourceTree = "<group>";
+		};
+		7F9852FD24D2AC4100D8E1FC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7F9852D624D2A4CD00D8E1FC /* Assets.xcassets */,
+				7F9852D824D2A4CD00D8E1FC /* LaunchScreen.storyboard */,
+				7F9852DB24D2A4CD00D8E1FC /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		D0E9F3E790A7A93C701B5BA6 /* Frameworks */ = {
