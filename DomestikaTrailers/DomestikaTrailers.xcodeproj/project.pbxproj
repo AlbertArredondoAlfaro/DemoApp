@@ -16,6 +16,7 @@
 		7F9852DA24D2A4CD00D8E1FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9852D824D2A4CD00D8E1FC /* LaunchScreen.storyboard */; };
 		7F9852E524D2A4CD00D8E1FC /* DomestikaTrailersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9852E424D2A4CD00D8E1FC /* DomestikaTrailersTests.swift */; };
 		7F9852F024D2A4CD00D8E1FC /* DomestikaTrailersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9852EF24D2A4CD00D8E1FC /* DomestikaTrailersUITests.swift */; };
+		7F98530024D2AD7100D8E1FC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9852FF24D2AD7100D8E1FC /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		7F9852EB24D2A4CD00D8E1FC /* DomestikaTrailersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomestikaTrailersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9852EF24D2A4CD00D8E1FC /* DomestikaTrailersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomestikaTrailersUITests.swift; sourceTree = "<group>"; };
 		7F9852F124D2A4CD00D8E1FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F9852FF24D2AD7100D8E1FC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		92373A1B77A2E434FA0B6FB8 /* Pods_DomestikaTrailers_DomestikaTrailersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DomestikaTrailers_DomestikaTrailersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6AC0FD9CC814849E4A497C7 /* Pods_DomestikaTrailers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DomestikaTrailers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC6BC1D25AFDE1EFEF3668E /* Pods_DomestikaTrailersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DomestikaTrailersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +129,7 @@
 			children = (
 				7F9852CD24D2A4CC00D8E1FC /* AppDelegate.swift */,
 				7F9852D124D2A4CC00D8E1FC /* ViewController.swift */,
+				7F9852FE24D2AD3200D8E1FC /* Common */,
 				7F9852FD24D2AC4100D8E1FC /* Resources */,
 			);
 			path = DomestikaTrailers;
@@ -158,6 +161,14 @@
 				7F9852DB24D2A4CD00D8E1FC /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		7F9852FE24D2AD3200D8E1FC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7F9852FF24D2AD7100D8E1FC /* NetworkManager.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		D0E9F3E790A7A93C701B5BA6 /* Frameworks */ = {
@@ -408,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F98530024D2AD7100D8E1FC /* NetworkManager.swift in Sources */,
 				7F9852D224D2A4CC00D8E1FC /* ViewController.swift in Sources */,
 				7F9852CE24D2A4CC00D8E1FC /* AppDelegate.swift in Sources */,
 			);
@@ -577,7 +589,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4JALZNH8YW;
-				INFOPLIST_FILE = DomestikaTrailers/Info.plist;
+				INFOPLIST_FILE = DomestikaTrailers/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -596,7 +608,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4JALZNH8YW;
-				INFOPLIST_FILE = DomestikaTrailers/Info.plist;
+				INFOPLIST_FILE = DomestikaTrailers/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

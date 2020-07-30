@@ -13,6 +13,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .red
+        
+        guard let url = URL(string: "http://mobile-assets.domestika.org/challenge/home.json") else { return }
+        let networkManager = NetworkManager()
+        
+        networkManager.loadData(from: url) { (response: NetworkResult<DomestikaAsset>) in
+            switch response {
+            case .success(let assets):
+                print(assets)
+            case .failure(let error):
+                print(error.debugDescription)
+            }
+        }
     }
 
 
