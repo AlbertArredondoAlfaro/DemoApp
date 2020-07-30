@@ -1,0 +1,19 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '13.0'
+
+target 'DomestikaTrailers' do
+  # Pods for DomestikaTrailers
+
+	## SnapKit: a wrapper on top of autolayout
+	pod 'SnapKit'
+
+  target 'DomestikaTrailersTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'DomestikaTrailersUITests' do
+    # Pods for testing
+  end
+end
