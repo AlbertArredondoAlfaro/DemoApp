@@ -15,7 +15,9 @@ class ViewController: UIViewController {
         self.view.backgroundColor = .red
         
         guard let url = URL(string: "http://mobile-assets.domestika.org/challenge/home.json") else { return }
-        NetworkManager.shared.loadAssets(from: url) { (response: NetworkResult<DomestikaAsset>) in
+        let networkManager = NetworkManager()
+        
+        networkManager.loadData(from: url) { (response: NetworkResult<DomestikaAsset>) in
             switch response {
             case .success(let assets):
                 print(assets)

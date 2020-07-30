@@ -39,12 +39,19 @@ struct DomestikaAsset: Decodable {
     let level: String?
 }
 
+/**
+* NetworkManager
+* Class reponsable to make API requests
+*/
 final class NetworkManager {
     
-    static let shared: NetworkManager = { return NetworkManager() }()
+    let urlSession: URLSession
+    init(urlSession: URLSession = .shared) {
+        self.urlSession = urlSession
+    }
     
-    func loadAssets<T: Decodable>(from url: URL, completionHandler: @escaping (NetworkResult<T>) -> Void) {
-        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+    func loadData<T: Decodable>(from url: URL, completionHandler: @escaping (NetworkResult<T>) -> Void) {
+        let task = urlSession.dataTask(with: url) { data, _, error in
             guard let dataObject = data else {
                 completionHandler(.failure(error))
                 return
@@ -56,31 +63,3 @@ final class NetworkManager {
         task.resume()
     }
 }
-
-/*
- 
- "id": "387",
- "thumbnailUrl": "http://mobile-assets.domestika.org/challenge/387-original.jpg",
- "title": "Introduction to Adobe Photoshop",
- "trailerUrl": "https://player.vimeo.com/external/295400375.hd.mp4?s=feac97d87265e818dfca5387a9b18d3ad7fff989&profile_id=175&oauth2_token_id=1121588336",
- "description": "Learn Adobe Photoshop from scratch and master the best software for treatment, retouching and creation of digital images on the market",
- "location": "Barcelona, Spain",
- "teacher": {
-   "name": "Carles Marsal",
-   "avatarUrl": "http://mobile-assets.domestika.org/challenge/89569-original.jpg"
- },
- "reviews": {
-   "positive": 4008,
-   "total": 4100
- },
- "lessonsCount": 50,
- "students": 161905,
- "audio": "Spanish",
- "subtitles": [
-   "English",
-   "Spanish",
-   "Portuguese"
- ],
- "level": "Beginner"
- 
- */
