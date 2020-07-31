@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38B1D07D7C883570B466F2C4 /* Pods_DomestikaTrailers_DomestikaTrailersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92373A1B77A2E434FA0B6FB8 /* Pods_DomestikaTrailers_DomestikaTrailersUITests.framework */; };
-		53518AB420BF6D5D952D34C1 /* Pods_DomestikaTrailers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6AC0FD9CC814849E4A497C7 /* Pods_DomestikaTrailers.framework */; };
-		55D28D6D4E88AA824B313941 /* Pods_DomestikaTrailersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC6BC1D25AFDE1EFEF3668E /* Pods_DomestikaTrailersTests.framework */; };
+		308E38A39B0280D0D90F1590 /* Pods_DomestikaTrailers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE7862E85D0A8732A573AE7 /* Pods_DomestikaTrailers.framework */; };
+		60326ED0043305280BC4C536 /* Pods_DomestikaTrailersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0020F538E03304F26E61D424 /* Pods_DomestikaTrailersTests.framework */; };
 		7F08180C24D2EC4E0090A993 /* CoursesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08180724D2EC4E0090A993 /* CoursesListPresenter.swift */; };
 		7F08180D24D2EC4E0090A993 /* CoursesListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08180824D2EC4E0090A993 /* CoursesListRouter.swift */; };
 		7F08180E24D2EC4E0090A993 /* CoursesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08180924D2EC4E0090A993 /* CoursesListViewController.swift */; };
@@ -18,12 +17,15 @@
 		7F08181524D3E6F30090A993 /* DomestikaAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08181424D3E6F30090A993 /* DomestikaAsset.swift */; };
 		7F08181724D3E7A80090A993 /* CourseListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08181624D3E7A80090A993 /* CourseListWorker.swift */; };
 		7F08181924D3E8DC0090A993 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08181824D3E8DC0090A993 /* Utilities.swift */; };
+		7F08181E24D3EAA90090A993 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08181D24D3EAA90090A993 /* BaseViewController.swift */; };
+		7F08182124D3EDC50090A993 /* CoursesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08182024D3EDC50090A993 /* CoursesListViewModel.swift */; };
 		7F9852CE24D2A4CC00D8E1FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9852CD24D2A4CC00D8E1FC /* AppDelegate.swift */; };
 		7F9852D724D2A4CD00D8E1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F9852D624D2A4CD00D8E1FC /* Assets.xcassets */; };
 		7F9852DA24D2A4CD00D8E1FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9852D824D2A4CD00D8E1FC /* LaunchScreen.storyboard */; };
 		7F9852E524D2A4CD00D8E1FC /* DomestikaTrailersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9852E424D2A4CD00D8E1FC /* DomestikaTrailersTests.swift */; };
 		7F9852F024D2A4CD00D8E1FC /* DomestikaTrailersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9852EF24D2A4CD00D8E1FC /* DomestikaTrailersUITests.swift */; };
 		7F98530024D2AD7100D8E1FC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9852FF24D2AD7100D8E1FC /* NetworkManager.swift */; };
+		D0AA04AB17900F3E28CACE1E /* Pods_DomestikaTrailers_DomestikaTrailersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CA31524C201D1737BF7EC8 /* Pods_DomestikaTrailers_DomestikaTrailersUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0020F538E03304F26E61D424 /* Pods_DomestikaTrailersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DomestikaTrailersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		178237A8BC7713D4D800FEBA /* Pods-DomestikaTrailers-DomestikaTrailersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomestikaTrailers-DomestikaTrailersUITests.release.xcconfig"; path = "Target Support Files/Pods-DomestikaTrailers-DomestikaTrailersUITests/Pods-DomestikaTrailers-DomestikaTrailersUITests.release.xcconfig"; sourceTree = "<group>"; };
+		27CA31524C201D1737BF7EC8 /* Pods_DomestikaTrailers_DomestikaTrailersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DomestikaTrailers_DomestikaTrailersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		476E1980A1CD4C503CB0A15C /* Pods-DomestikaTrailers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomestikaTrailers.release.xcconfig"; path = "Target Support Files/Pods-DomestikaTrailers/Pods-DomestikaTrailers.release.xcconfig"; sourceTree = "<group>"; };
 		4993FFB200C35E0B83F68848 /* Pods-DomestikaTrailersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomestikaTrailersTests.release.xcconfig"; path = "Target Support Files/Pods-DomestikaTrailersTests/Pods-DomestikaTrailersTests.release.xcconfig"; sourceTree = "<group>"; };
 		5FB30341CA4AB760D18570CD /* Pods-DomestikaTrailersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomestikaTrailersTests.debug.xcconfig"; path = "Target Support Files/Pods-DomestikaTrailersTests/Pods-DomestikaTrailersTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 		7F08181424D3E6F30090A993 /* DomestikaAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomestikaAsset.swift; sourceTree = "<group>"; };
 		7F08181624D3E7A80090A993 /* CourseListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListWorker.swift; sourceTree = "<group>"; };
 		7F08181824D3E8DC0090A993 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		7F08181D24D3EAA90090A993 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		7F08182024D3EDC50090A993 /* CoursesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesListViewModel.swift; sourceTree = "<group>"; };
 		7F9852CA24D2A4CC00D8E1FC /* DomestikaTrailers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DomestikaTrailers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9852CD24D2A4CC00D8E1FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F9852D624D2A4CD00D8E1FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,9 +74,7 @@
 		7F9852EF24D2A4CD00D8E1FC /* DomestikaTrailersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomestikaTrailersUITests.swift; sourceTree = "<group>"; };
 		7F9852F124D2A4CD00D8E1FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F9852FF24D2AD7100D8E1FC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		92373A1B77A2E434FA0B6FB8 /* Pods_DomestikaTrailers_DomestikaTrailersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DomestikaTrailers_DomestikaTrailersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6AC0FD9CC814849E4A497C7 /* Pods_DomestikaTrailers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DomestikaTrailers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADC6BC1D25AFDE1EFEF3668E /* Pods_DomestikaTrailersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DomestikaTrailersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EE7862E85D0A8732A573AE7 /* Pods_DomestikaTrailers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DomestikaTrailers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B905B539F5CD75A2A6E5D6F2 /* Pods-DomestikaTrailers-DomestikaTrailersUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomestikaTrailers-DomestikaTrailersUITests.debug.xcconfig"; path = "Target Support Files/Pods-DomestikaTrailers-DomestikaTrailersUITests/Pods-DomestikaTrailers-DomestikaTrailersUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB1F69A331CAB259F1E28C3A /* Pods-DomestikaTrailers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomestikaTrailers.debug.xcconfig"; path = "Target Support Files/Pods-DomestikaTrailers/Pods-DomestikaTrailers.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53518AB420BF6D5D952D34C1 /* Pods_DomestikaTrailers.framework in Frameworks */,
+				308E38A39B0280D0D90F1590 /* Pods_DomestikaTrailers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55D28D6D4E88AA824B313941 /* Pods_DomestikaTrailersTests.framework in Frameworks */,
+				60326ED0043305280BC4C536 /* Pods_DomestikaTrailersTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38B1D07D7C883570B466F2C4 /* Pods_DomestikaTrailers_DomestikaTrailersUITests.framework in Frameworks */,
+				D0AA04AB17900F3E28CACE1E /* Pods_DomestikaTrailers_DomestikaTrailersUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,12 +123,13 @@
 		7F08180624D2EC2E0090A993 /* CoursesList */ = {
 			isa = PBXGroup;
 			children = (
-				7F08180724D2EC4E0090A993 /* CoursesListPresenter.swift */,
-				7F08180824D2EC4E0090A993 /* CoursesListRouter.swift */,
-				7F08180924D2EC4E0090A993 /* CoursesListViewController.swift */,
+				7F08181F24D3EDB90090A993 /* Models */,
 				7F08180A24D2EC4E0090A993 /* CoursesListProtocols.swift */,
+				7F08180724D2EC4E0090A993 /* CoursesListPresenter.swift */,
+				7F08180924D2EC4E0090A993 /* CoursesListViewController.swift */,
 				7F08180B24D2EC4E0090A993 /* CoursesListInteractor.swift */,
 				7F08181624D3E7A80090A993 /* CourseListWorker.swift */,
+				7F08180824D2EC4E0090A993 /* CoursesListRouter.swift */,
 			);
 			path = CoursesList;
 			sourceTree = "<group>";
@@ -152,6 +157,30 @@
 				7F08181824D3E8DC0090A993 /* Utilities.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		7F08181B24D3EA920090A993 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				7F08181C24D3EA970090A993 /* ViewControllers */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		7F08181C24D3EA970090A993 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7F08181D24D3EAA90090A993 /* BaseViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7F08181F24D3EDB90090A993 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7F08182024D3EDC50090A993 /* CoursesListViewModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		7F9852C124D2A4CB00D8E1FC = {
@@ -218,6 +247,7 @@
 		7F9852FE24D2AD3200D8E1FC /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				7F08181B24D3EA920090A993 /* UI */,
 				7F08181224D3E6BD0090A993 /* Networking */,
 				7F08181A24D3E8EC0090A993 /* Utilities */,
 			);
@@ -227,9 +257,9 @@
 		D0E9F3E790A7A93C701B5BA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A6AC0FD9CC814849E4A497C7 /* Pods_DomestikaTrailers.framework */,
-				92373A1B77A2E434FA0B6FB8 /* Pods_DomestikaTrailers_DomestikaTrailersUITests.framework */,
-				ADC6BC1D25AFDE1EFEF3668E /* Pods_DomestikaTrailersTests.framework */,
+				9EE7862E85D0A8732A573AE7 /* Pods_DomestikaTrailers.framework */,
+				27CA31524C201D1737BF7EC8 /* Pods_DomestikaTrailers_DomestikaTrailersUITests.framework */,
+				0020F538E03304F26E61D424 /* Pods_DomestikaTrailersTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -245,7 +275,7 @@
 				7F9852C624D2A4CB00D8E1FC /* Sources */,
 				7F9852C724D2A4CB00D8E1FC /* Frameworks */,
 				7F9852C824D2A4CB00D8E1FC /* Resources */,
-				21C362439E491E4D0F7550A9 /* [CP] Embed Pods Frameworks */,
+				76D79558432B40FDB89F288D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -283,7 +313,7 @@
 				7F9852E724D2A4CD00D8E1FC /* Sources */,
 				7F9852E824D2A4CD00D8E1FC /* Frameworks */,
 				7F9852E924D2A4CD00D8E1FC /* Resources */,
-				B66183048915A5A3FA8A9865 /* [CP] Embed Pods Frameworks */,
+				E0473534FBA9E3BE5BE545B0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -365,23 +395,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		21C362439E491E4D0F7550A9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DomestikaTrailers/Pods-DomestikaTrailers-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DomestikaTrailers/Pods-DomestikaTrailers-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DomestikaTrailers/Pods-DomestikaTrailers-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		346019ABD882BF5BB58D68A9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -426,7 +439,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B66183048915A5A3FA8A9865 /* [CP] Embed Pods Frameworks */ = {
+		76D79558432B40FDB89F288D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DomestikaTrailers/Pods-DomestikaTrailers-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DomestikaTrailers/Pods-DomestikaTrailers-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DomestikaTrailers/Pods-DomestikaTrailers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0473534FBA9E3BE5BE545B0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -473,7 +503,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F98530024D2AD7100D8E1FC /* NetworkManager.swift in Sources */,
+				7F08182124D3EDC50090A993 /* CoursesListViewModel.swift in Sources */,
 				7F08181724D3E7A80090A993 /* CourseListWorker.swift in Sources */,
+				7F08181E24D3EAA90090A993 /* BaseViewController.swift in Sources */,
 				7F08181024D2EC4E0090A993 /* CoursesListInteractor.swift in Sources */,
 				7F08180C24D2EC4E0090A993 /* CoursesListPresenter.swift in Sources */,
 				7F08181524D3E6F30090A993 /* DomestikaAsset.swift in Sources */,

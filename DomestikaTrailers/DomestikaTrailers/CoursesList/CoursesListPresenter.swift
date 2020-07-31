@@ -25,5 +25,22 @@ class CoursesListPresenter {
 
 // MARK: - CoursesListPresenterDelegate
 extension CoursesListPresenter: CoursesListPresenterDelegate {
-    //__ Implement your protocols here
+    func viewDidLoad() {
+        getAssets(showLoader: true)
+    }
+}
+
+// MARK: - Private Section
+extension CoursesListPresenter {
+    private func getAssets(showLoader: Bool) {
+        
+        view?.showLoader(showLoader)
+        
+        interactor.getAssets { [weak self] (assets, error) in
+            self?.view?.showLoader(false)
+            
+            
+            // load view
+        }
+    }
 }

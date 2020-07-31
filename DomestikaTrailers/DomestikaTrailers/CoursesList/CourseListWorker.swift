@@ -10,16 +10,12 @@ import Foundation
 
 class DocumentListWorker {
     //__ Network API client
-    private let client: NetworkManager?
-
-    init(_ client: NetworkManager? = nil) {
-        self.client = client
-    }
+    private let client = NetworkManager()
 
     public func fetchAssets(_ successCallback: SuccessHandler<[DomestikaAsset]>, _ errorCallback: FailureHandler) {
         guard let url = URL(string: "http://mobile-assets.domestika.org/challenge/home.json") else { return }
         
-        client?.loadData(from: url) { (response: NetworkResult<DomestikaAsset>) in
+        client.loadData(from: url) { (response: NetworkResult<DomestikaAsset>) in
             switch response {
             case .success(let assets):
                 successCallback?(assets)

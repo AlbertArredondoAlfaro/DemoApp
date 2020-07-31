@@ -20,7 +20,7 @@ enum NetworkResult<T> {
 final class NetworkManager {
     
     let urlSession: URLSession
-    init(urlSession: URLSession = .shared) {
+    init (urlSession: URLSession = .shared) {
         self.urlSession = urlSession
     }
     

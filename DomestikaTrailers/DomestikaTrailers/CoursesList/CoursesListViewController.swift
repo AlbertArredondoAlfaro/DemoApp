@@ -8,8 +8,7 @@
 
 import UIKit
 
-//__ This class extends UIViewController. Feel free to modify it if needed
-class CoursesListViewController: UIViewController {
+class CoursesListViewController: BaseViewController {
     
     var presenter: CoursesListPresenterDelegate?
     
@@ -17,6 +16,7 @@ class CoursesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        presenter?.viewDidLoad()
     }
     
 }
@@ -61,5 +61,11 @@ extension CoursesListViewController {
 
 // MARK: - CoursesListViewInjection
 extension CoursesListViewController: CoursesListViewInjection {
-    //__ Implement your protocols here
+    func showLoader(_ show: Bool) {
+        if show {
+            showProgress(userInteractionEnabled: false)
+        } else {
+            hideProgress()
+        }
+    }
 }

@@ -10,16 +10,18 @@ import Foundation
 
 // View / Presenter
 protocol CoursesListViewInjection : AnyObject {
-    //__ Define your view protocols here
+    func showLoader(_ show: Bool)
 }
 
 protocol CoursesListPresenterDelegate : AnyObject {
-    //__ Define your presenter protocols here
+    func viewDidLoad()
 }
 
 // Presenter / Interactor
+typealias CoursesListGetAssetsCompletionBlock = (_ viewModel: [CoursesListViewModel]?, _ error: Error?) -> Void
+
 protocol CoursesListInteractorDelegate : AnyObject {
-    //__ Define your interactor protocols here
+    func getAssets(completion: @escaping CoursesListGetAssetsCompletionBlock)
 }
 
 // Presenter / Router
