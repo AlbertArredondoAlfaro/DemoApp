@@ -11,6 +11,7 @@ import Foundation
 // View / Presenter
 protocol CoursesListViewInjection : AnyObject {
     func showLoader(_ show: Bool)
+    func loadTopCarouselView(_ courses: [CoursesListViewModel])
 }
 
 protocol CoursesListPresenterDelegate : AnyObject {

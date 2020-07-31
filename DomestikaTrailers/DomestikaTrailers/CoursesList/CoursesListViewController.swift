@@ -12,6 +12,8 @@ class CoursesListViewController: BaseViewController {
     
     var presenter: CoursesListPresenterDelegate?
     
+    private lazy var topCarouselView = TopCarouselView()
+    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +32,7 @@ extension CoursesListViewController {
     private func setupViews() {
         //__ Configure your view here
         //__ Background color, title, safe area
-        self.view.backgroundColor = .blue
+        self.view.backgroundColor = .white
         
         configureSubviews()
         addSubviews()
@@ -52,15 +54,24 @@ extension CoursesListViewController {
      Add subviews
      */
     private func addSubviews() {
-        //__ Add all the subviews here
+        self.view.addSubview(topCarouselView)
         
-        //__ Configure the constraints
+        topCarouselView.snp.makeConstraints {
+            $0.top.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(view.snp.centerY)
+        }
     }
 
 }
 
 // MARK: - CoursesListViewInjection
 extension CoursesListViewController: CoursesListViewInjection {
+    func loadTopCarouselView(_ courses: [CoursesListViewModel]) {
+        DispatchQueue.main.async {
+            self.topCarouselView.configure(with: courses)
+        }
+    }
+    
     func showLoader(_ show: Bool) {
         if show {
             showProgress(userInteractionEnabled: false)

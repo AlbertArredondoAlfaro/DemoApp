@@ -19,6 +19,8 @@
 		7F08181924D3E8DC0090A993 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08181824D3E8DC0090A993 /* Utilities.swift */; };
 		7F08181E24D3EAA90090A993 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08181D24D3EAA90090A993 /* BaseViewController.swift */; };
 		7F08182124D3EDC50090A993 /* CoursesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08182024D3EDC50090A993 /* CoursesListViewModel.swift */; };
+		7F08182524D3FEFB0090A993 /* TopCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08182424D3FEFB0090A993 /* TopCarouselView.swift */; };
+		7F08182924D408CD0090A993 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08182824D408CD0090A993 /* TopView.swift */; };
 		7F9852CE24D2A4CC00D8E1FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9852CD24D2A4CC00D8E1FC /* AppDelegate.swift */; };
 		7F9852D724D2A4CD00D8E1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F9852D624D2A4CD00D8E1FC /* Assets.xcassets */; };
 		7F9852DA24D2A4CD00D8E1FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9852D824D2A4CD00D8E1FC /* LaunchScreen.storyboard */; };
@@ -62,6 +64,8 @@
 		7F08181824D3E8DC0090A993 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		7F08181D24D3EAA90090A993 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		7F08182024D3EDC50090A993 /* CoursesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesListViewModel.swift; sourceTree = "<group>"; };
+		7F08182424D3FEFB0090A993 /* TopCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCarouselView.swift; sourceTree = "<group>"; };
+		7F08182824D408CD0090A993 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		7F9852CA24D2A4CC00D8E1FC /* DomestikaTrailers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DomestikaTrailers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9852CD24D2A4CC00D8E1FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F9852D624D2A4CD00D8E1FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,7 +127,8 @@
 		7F08180624D2EC2E0090A993 /* CoursesList */ = {
 			isa = PBXGroup;
 			children = (
-				7F08181F24D3EDB90090A993 /* Models */,
+				7F08182224D3FEAE0090A993 /* Views */,
+				7F08181F24D3EDB90090A993 /* ViewModels */,
 				7F08180A24D2EC4E0090A993 /* CoursesListProtocols.swift */,
 				7F08180724D2EC4E0090A993 /* CoursesListPresenter.swift */,
 				7F08180924D2EC4E0090A993 /* CoursesListViewController.swift */,
@@ -175,12 +180,29 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		7F08181F24D3EDB90090A993 /* Models */ = {
+		7F08181F24D3EDB90090A993 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				7F08182024D3EDC50090A993 /* CoursesListViewModel.swift */,
 			);
-			path = Models;
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7F08182224D3FEAE0090A993 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7F08182324D3FED00090A993 /* TopCarouselView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7F08182324D3FED00090A993 /* TopCarouselView */ = {
+			isa = PBXGroup;
+			children = (
+				7F08182424D3FEFB0090A993 /* TopCarouselView.swift */,
+				7F08182824D408CD0090A993 /* TopView.swift */,
+			);
+			path = TopCarouselView;
 			sourceTree = "<group>";
 		};
 		7F9852C124D2A4CB00D8E1FC = {
@@ -502,9 +524,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F08182924D408CD0090A993 /* TopView.swift in Sources */,
 				7F98530024D2AD7100D8E1FC /* NetworkManager.swift in Sources */,
 				7F08182124D3EDC50090A993 /* CoursesListViewModel.swift in Sources */,
 				7F08181724D3E7A80090A993 /* CourseListWorker.swift in Sources */,
+				7F08182524D3FEFB0090A993 /* TopCarouselView.swift in Sources */,
 				7F08181E24D3EAA90090A993 /* BaseViewController.swift in Sources */,
 				7F08181024D2EC4E0090A993 /* CoursesListInteractor.swift in Sources */,
 				7F08180C24D2EC4E0090A993 /* CoursesListPresenter.swift in Sources */,

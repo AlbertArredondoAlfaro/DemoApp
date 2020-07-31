@@ -36,11 +36,14 @@ extension CoursesListPresenter {
         
         view?.showLoader(showLoader)
         
-        interactor.getAssets { [weak self] (assets, error) in
+        interactor.getAssets { [weak self] (courses, error) in
             self?.view?.showLoader(false)
-            
-            
-            // load view
+            guard let courses = courses else {
+                // TODO: we can show some error to the user here
+                return
+            }
+            let firstFourItemsArray = Array(courses.prefix(4))
+            self?.view?.loadTopCarouselView(firstFourItemsArray)
         }
     }
 }
