@@ -62,9 +62,8 @@ extension CourseTrailerCell {
      *
      * - parameters:
      *      -viewModel: CoursesListViewModel
-     *      -index: the current index
      */
-    public func bindWithViewModel(_ viewModel: CourseViewModel, at index: Int) {
+    public func bindWithViewModel(_ viewModel: CourseViewModel) {
         guard let urlString = viewModel.thumbnailUrl else {
             // Or configure with a placeholder image
             return

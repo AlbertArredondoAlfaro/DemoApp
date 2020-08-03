@@ -6,7 +6,31 @@
 //  Copyright © 2020 Albert Arredondo Alfaro. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+enum LevelColor {
+    case begginer
+    case intermediate
+    case advanced
+    case unknown
+}
+
+extension LevelColor {
+    var value: UIColor {
+        get {
+            switch self {
+            case .begginer:
+                return .beginnerColor
+            case .intermediate:
+                return .intermediateColor
+            case .advanced:
+                return .advancedColor
+            case .unknown:
+                return .clear
+            }
+        }
+    }
+}
 
 struct CourseViewModel {
     let title: String?
@@ -23,6 +47,40 @@ struct CourseViewModel {
     let subtitles: [String]?
     let level: String?
     let trailerUrl: String?
+    
+    var positiveReviewsPercentage: String {
+        get {
+            guard let positive = positiveReviews, let total = totalReviews else { return "" }
+            let percentage = (positive * 100) / total
+            return String(format: "%d", percentage)
+        }
+    }
+    
+    var joinedSubtitles: String {
+        get {
+            guard let subtitles = subtitles else { return "No disponibles" }
+            if subtitles.count == 0 {
+                return "No disponibles"
+            }
+            return subtitles.joined(separator: "/ ")
+        }
+    }
+    
+    var levelColor: LevelColor {
+        get {
+            guard let level = level else { return .unknown }
+            
+            if level == "Beginner" {
+                return .begginer
+            } else if level == "Intermediate" {
+                return .intermediate
+            } else if level == "Advanced" {
+                return .advanced
+            } else {
+                return .unknown
+            }
+        }
+    }
 }
 
 extension CourseViewModel {

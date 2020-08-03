@@ -17,4 +17,9 @@ extension UIColor {
 
     // __ UI colors
     @nonobjc static var lineSeparatorColor: UIColor = UIColor(named: "lineSeparatorColor")!
+    
+    // __ Course Level tag colors
+    @nonobjc static var beginnerColor: UIColor = UIColor(named: "beginnerColor")!
+    @nonobjc static var intermediateColor: UIColor = UIColor(named: "intermediateColor")!
+    @nonobjc static var advancedColor: UIColor = UIColor(named: "advancedColor")!
 }

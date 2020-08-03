@@ -95,9 +95,8 @@ extension CourseDescriptionCell {
      *
      * - parameters:
      *      -viewModel: CoursesListViewModel
-     *      -index: the current index
      */
-    public func bindWithViewModel(_ viewModel: CourseViewModel, at index: Int) {
+    public func bindWithViewModel(_ viewModel: CourseViewModel) {
         courseTitleLabel.text = viewModel.title
         courseDescriptionLabel.text = viewModel.courseDescription
         teacherLabel.text = viewModel.teacherName

@@ -32,7 +32,7 @@ extension CoursesDetailViewController {
      Setup views
      */
     private func setupViews() {
-        self.view.backgroundColor = .red
+        self.view.backgroundColor = .white
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         		
         //__ Create a custom back button
@@ -73,6 +73,8 @@ extension CoursesDetailViewController {
     private func registerCells() {
         tableView?.register(CourseTrailerCell.self, forCellReuseIdentifier: CourseTrailerCell.identifier)
         tableView?.register(CourseDescriptionCell.self, forCellReuseIdentifier: CourseDescriptionCell.identifier)
+        tableView?.register(CourseDetailsCell.self, forCellReuseIdentifier: CourseDetailsCell.identifier)
+        tableView?.register(CourseLevelCell.self, forCellReuseIdentifier: CourseLevelCell.identifier)
     }
     
     /**
