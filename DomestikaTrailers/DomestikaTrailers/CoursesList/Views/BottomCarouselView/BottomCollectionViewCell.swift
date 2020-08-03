@@ -117,7 +117,7 @@ extension BottomCollectionViewCell {
      */
     public func bindWithViewModel(_ viewModel: CourseViewModel, at index: Int) {
         guard let urlString = viewModel.thumbnailUrl else {
-            // Or configure with a placeholder image
+            // Here we can use a placeholder image in case we don't have an avatar url or if the url is not valid
             return
         }
         self.imageView.sd_setImage(with: URL(string: urlString))
