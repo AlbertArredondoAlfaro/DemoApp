@@ -11,16 +11,17 @@ import Foundation
 // View / Presenter
 protocol CoursesListViewInjection : AnyObject {
     func showLoader(_ show: Bool)
-    func loadTopCarouselView(_ courses: [CoursesListViewModel])
-    func loadBottomCarouselView(_ courses: [CoursesListViewModel])
+    func loadTopCarouselView(_ courses: [CourseViewModel])
+    func loadBottomCarouselView(_ courses: [CourseViewModel])
 }
 
 protocol CoursesListPresenterDelegate : AnyObject {
     func viewDidLoad()
+    func watchTopCarouselCourse(at index: Int)
 }
 
 // Presenter / Interactor
-typealias CoursesListGetAssetsCompletionBlock = (_ viewModel: [CoursesListViewModel]?, _ error: Error?) -> Void
+typealias CoursesListGetAssetsCompletionBlock = (_ viewModel: [CourseViewModel]?, _ error: Error?) -> Void
 
 protocol CoursesListInteractorDelegate : AnyObject {
     func getAssets(completion: @escaping CoursesListGetAssetsCompletionBlock)
@@ -28,5 +29,5 @@ protocol CoursesListInteractorDelegate : AnyObject {
 
 // Presenter / Router
 protocol CoursesListRouterDelegate : AnyObject {
-    //__ Define your router protocols here
+    func showCourseDetailWithViewModel(_ viewModel: CourseViewModel)
 }

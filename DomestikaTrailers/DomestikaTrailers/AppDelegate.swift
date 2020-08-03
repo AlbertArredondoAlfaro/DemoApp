@@ -14,14 +14,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
-        let viewController = CoursesListRouter.setupModule()
+        setupTheme()
+        
+        let navigationController = UINavigationController()
+        let viewController = CoursesListRouter.setupModule(navigationController: navigationController)
+        navigationController.setViewControllers([viewController], animated: true)
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = viewController
+        window?.rootViewController = navigationController
         
         return true
     }
 
 }
 
+private extension AppDelegate {
+    func setupTheme() {
+        // NavigationBar
+        UINavigationBar.appearance().barTintColor = .white
+        UINavigationBar.appearance().tintColor = .black
+        UINavigationBar.appearance().isTranslucent = false
+    }
+}

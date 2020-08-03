@@ -22,6 +22,15 @@ class CoursesListViewController: BaseViewController {
         presenter?.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 }
 
 // MARK: - Setup views
@@ -34,6 +43,9 @@ extension CoursesListViewController {
         //__ Configure your view here
         //__ Background color, title, safe area
         self.view.backgroundColor = .white
+
+        // TODO: fix
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         configureSubviews()
         addSubviews()
@@ -43,7 +55,7 @@ extension CoursesListViewController {
      Configure subviews
      */
     private func configureSubviews() {
-        //__ Configure all the subviews here
+        topCarouselView.delegate = self
     }
     
 }
@@ -55,8 +67,8 @@ extension CoursesListViewController {
      Add subviews
      */
     private func addSubviews() {
-        self.view.addSubview(topCarouselView)
-        self.view.addSubview(bottomCarouselView)
+        view.addSubview(topCarouselView)
+        view.addSubview(bottomCarouselView)
         
         topCarouselView.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
@@ -73,13 +85,13 @@ extension CoursesListViewController {
 
 // MARK: - CoursesListViewInjection
 extension CoursesListViewController: CoursesListViewInjection {
-    func loadBottomCarouselView(_ courses: [CoursesListViewModel]) {
+    func loadBottomCarouselView(_ courses: [CourseViewModel]) {
         DispatchQueue.main.async {
             self.bottomCarouselView.configure(with: courses)
         }
     }
     
-    func loadTopCarouselView(_ courses: [CoursesListViewModel]) {
+    func loadTopCarouselView(_ courses: [CourseViewModel]) {
         DispatchQueue.main.async {
             self.topCarouselView.configure(with: courses)
         }
@@ -91,5 +103,12 @@ extension CoursesListViewController: CoursesListViewInjection {
         } else {
             hideProgress()
         }
+    }
+}
+
+// MARK: - TopCarouselViewDelegate
+extension CoursesListViewController: TopCarouselViewDelegate {
+    func watchCourseAtIndex(index: Int) {
+        presenter?.watchTopCarouselCourse(at: index)
     }
 }

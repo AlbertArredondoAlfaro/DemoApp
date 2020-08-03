@@ -37,9 +37,9 @@ extension CoursesListInteractor {
      - parameter assets: DomestikaAsset  array to evaluate
      - returns: an optional CourseListViewModel array
      */
-    private func generateViewModelsWith(assets: [DomestikaAsset]) -> [CoursesListViewModel]? {
+    private func generateViewModelsWith(assets: [DomestikaAsset]) -> [CourseViewModel]? {
         //__ Get the view models
-        let viewModels = CoursesListViewModel.getViewModelsWith(assets)
+        let viewModels = CourseViewModel.getViewModelsWith(assets)
         return viewModels
     }
 }

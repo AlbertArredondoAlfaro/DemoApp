@@ -8,7 +8,15 @@
 
 import UIKit
 
+
+protocol TopViewDelegate: class {
+    func watchCourseTappedAtIndex(index: Int)
+}
+
 class TopView: UIView {
+    
+    private var index: Int?
+    public weak var delegate: TopViewDelegate?
     
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
@@ -31,6 +39,7 @@ class TopView: UIView {
         button.setTitle("Watch", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.layer.cornerRadius = 2
+        button.addTarget(self, action: #selector(watchButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -45,7 +54,8 @@ class TopView: UIView {
         setupViews()
     }
     
-    func configure(with viewModel: CoursesListViewModel) {
+    func configure(with viewModel: CourseViewModel, at index: Int) {
+        self.index = index
         titleLabel.text = viewModel.title
         if let urlString = viewModel.thumbnailUrl {
             imageView.sd_setImage(with: URL(string: urlString)) { (image, _, _, _) in
@@ -93,6 +103,15 @@ class TopView: UIView {
     
 }
 
+// MARK: - Actions
+extension TopView {
+    @objc func watchButtonTapped() {
+        if let index = index {
+            delegate?.watchCourseTappedAtIndex(index: index)
+        }
+    }
+}
+   
 // MARK: - Setup views
 extension TopView {
     

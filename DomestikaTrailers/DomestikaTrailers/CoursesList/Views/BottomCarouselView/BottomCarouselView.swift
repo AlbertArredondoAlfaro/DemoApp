@@ -25,7 +25,7 @@ class BottomCarouselView: UIView {
         setupViews()
     }
     
-    public func configure(with viewModel: [CoursesListViewModel]) {
+    public func configure(with viewModel: [CourseViewModel]) {
         datasource?.items = viewModel
         collectionView?.reloadData()
     }
@@ -74,7 +74,7 @@ extension BottomCarouselView {
     }
     
     /**
-     * Setup datasource for the suggestions table view
+     * Setup datasource for the collectionView
      */
     private func setupDatasource() {
         if let collectionView = collectionView {

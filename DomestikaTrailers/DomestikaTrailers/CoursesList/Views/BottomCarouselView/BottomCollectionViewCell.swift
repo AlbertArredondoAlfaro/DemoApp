@@ -115,7 +115,7 @@ extension BottomCollectionViewCell {
      *      -viewModel: CoursesListViewModel
      *      -index: the current index
      */
-    public func bindWithViewModel(_ viewModel: CoursesListViewModel, at index: Int) {
+    public func bindWithViewModel(_ viewModel: CourseViewModel, at index: Int) {
         guard let urlString = viewModel.thumbnailUrl else {
             // Or configure with a placeholder image
             return

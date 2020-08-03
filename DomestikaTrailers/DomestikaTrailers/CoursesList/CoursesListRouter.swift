@@ -23,7 +23,7 @@ class CoursesListRouter {
      */
     public static func setupModule(navigationController: UINavigationController? = nil) -> UIViewController {
         let vc = CoursesListViewController()
-        let presenter = CoursesListPresenter(view: vc)
+        let presenter = CoursesListPresenter(view: vc, navigationController: navigationController)
         vc.presenter = presenter
         return vc
     }
@@ -32,5 +32,8 @@ class CoursesListRouter {
 
 // MARK: - CoursesListRouterDelegate
 extension CoursesListRouter: CoursesListRouterDelegate {
-    //__ Implement your protocols here
+    func showCourseDetailWithViewModel(_ viewModel: CourseViewModel) {
+        let vc = CoursesDetailRouter.setupModule(withModel: viewModel, navigationController: navigationController)
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
