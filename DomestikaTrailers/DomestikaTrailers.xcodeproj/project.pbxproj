@@ -36,9 +36,9 @@
 		7F08184624D7E36A0090A993 /* UINavigationBar+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08184524D7E36A0090A993 /* UINavigationBar+Theme.swift */; };
 		7F08184A24D7E41E0090A993 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08184924D7E41E0090A993 /* BackButton.swift */; };
 		7F08184C24D83AF30090A993 /* CoursesDetailDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08184B24D83AF30090A993 /* CoursesDetailDatasource.swift */; };
-		7F08184F24D83D5F0090A993 /* CourseDetailVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08184E24D83D5F0090A993 /* CourseDetailVideoCell.swift */; };
-		7F08185124D83D8A0090A993 /* CourseDetailGeneralCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08185024D83D8A0090A993 /* CourseDetailGeneralCell.swift */; };
-		7F08185324D83DBE0090A993 /* CourseDetailItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08185224D83DBE0090A993 /* CourseDetailItemCell.swift */; };
+		7F08184F24D83D5F0090A993 /* CourseTrailerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08184E24D83D5F0090A993 /* CourseTrailerCell.swift */; };
+		7F08185124D83D8A0090A993 /* CourseDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08185024D83D8A0090A993 /* CourseDescriptionCell.swift */; };
+		7F08185324D83DBE0090A993 /* CourseDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08185224D83DBE0090A993 /* CourseDetailCell.swift */; };
 		7F9852CE24D2A4CC00D8E1FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9852CD24D2A4CC00D8E1FC /* AppDelegate.swift */; };
 		7F9852D724D2A4CD00D8E1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F9852D624D2A4CD00D8E1FC /* Assets.xcassets */; };
 		7F9852DA24D2A4CD00D8E1FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9852D824D2A4CD00D8E1FC /* LaunchScreen.storyboard */; };
@@ -99,9 +99,9 @@
 		7F08184524D7E36A0090A993 /* UINavigationBar+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Theme.swift"; sourceTree = "<group>"; };
 		7F08184924D7E41E0090A993 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		7F08184B24D83AF30090A993 /* CoursesDetailDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesDetailDatasource.swift; sourceTree = "<group>"; };
-		7F08184E24D83D5F0090A993 /* CourseDetailVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailVideoCell.swift; sourceTree = "<group>"; };
-		7F08185024D83D8A0090A993 /* CourseDetailGeneralCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailGeneralCell.swift; sourceTree = "<group>"; };
-		7F08185224D83DBE0090A993 /* CourseDetailItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailItemCell.swift; sourceTree = "<group>"; };
+		7F08184E24D83D5F0090A993 /* CourseTrailerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTrailerCell.swift; sourceTree = "<group>"; };
+		7F08185024D83D8A0090A993 /* CourseDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDescriptionCell.swift; sourceTree = "<group>"; };
+		7F08185224D83DBE0090A993 /* CourseDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailCell.swift; sourceTree = "<group>"; };
 		7F9852CA24D2A4CC00D8E1FC /* DomestikaTrailers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DomestikaTrailers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9852CD24D2A4CC00D8E1FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F9852D624D2A4CD00D8E1FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -289,9 +289,9 @@
 		7F08184D24D83D450090A993 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				7F08184E24D83D5F0090A993 /* CourseDetailVideoCell.swift */,
-				7F08185024D83D8A0090A993 /* CourseDetailGeneralCell.swift */,
-				7F08185224D83DBE0090A993 /* CourseDetailItemCell.swift */,
+				7F08184E24D83D5F0090A993 /* CourseTrailerCell.swift */,
+				7F08185024D83D8A0090A993 /* CourseDescriptionCell.swift */,
+				7F08185224D83DBE0090A993 /* CourseDetailCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -623,7 +623,7 @@
 				7F98530024D2AD7100D8E1FC /* NetworkManager.swift in Sources */,
 				7F08182124D3EDC50090A993 /* CourseViewModel.swift in Sources */,
 				7F08181724D3E7A80090A993 /* CourseListWorker.swift in Sources */,
-				7F08185324D83DBE0090A993 /* CourseDetailItemCell.swift in Sources */,
+				7F08185324D83DBE0090A993 /* CourseDetailCell.swift in Sources */,
 				7F08183324D431230090A993 /* UIVIew+Rounded.swift in Sources */,
 				7F08183924D7C5A90090A993 /* UIColor+Theme.swift in Sources */,
 				7F08184C24D83AF30090A993 /* CoursesDetailDatasource.swift in Sources */,
@@ -638,7 +638,7 @@
 				7F08181524D3E6F30090A993 /* DomestikaAsset.swift in Sources */,
 				7F08184424D7CC4E0090A993 /* CoursesDetailInteractor.swift in Sources */,
 				7F08180E24D2EC4E0090A993 /* CoursesListViewController.swift in Sources */,
-				7F08184F24D83D5F0090A993 /* CourseDetailVideoCell.swift in Sources */,
+				7F08184F24D83D5F0090A993 /* CourseTrailerCell.swift in Sources */,
 				7F08183124D42D8D0090A993 /* UIView+Shadow.swift in Sources */,
 				7F9852CE24D2A4CC00D8E1FC /* AppDelegate.swift in Sources */,
 				7F08182E24D428150090A993 /* BottomCollectionViewCell.swift in Sources */,
@@ -646,7 +646,7 @@
 				7F08182C24D428030090A993 /* BottomCarouselView.swift in Sources */,
 				7F08184224D7CC4E0090A993 /* CoursesDetailViewController.swift in Sources */,
 				7F08184A24D7E41E0090A993 /* BackButton.swift in Sources */,
-				7F08185124D83D8A0090A993 /* CourseDetailGeneralCell.swift in Sources */,
+				7F08185124D83D8A0090A993 /* CourseDescriptionCell.swift in Sources */,
 				7F08181924D3E8DC0090A993 /* Utilities.swift in Sources */,
 				7F08184124D7CC4E0090A993 /* CoursesDetailRouter.swift in Sources */,
 				7F08180F24D2EC4E0090A993 /* CoursesListProtocols.swift in Sources */,

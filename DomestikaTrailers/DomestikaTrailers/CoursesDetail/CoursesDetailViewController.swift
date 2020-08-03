@@ -71,7 +71,8 @@ extension CoursesDetailViewController {
      * Register all the cells we need
      */
     private func registerCells() {
-        tableView?.register(CourseDetailVideoCell.self, forCellReuseIdentifier: CourseDetailVideoCell.identifier)
+        tableView?.register(CourseTrailerCell.self, forCellReuseIdentifier: CourseTrailerCell.identifier)
+        tableView?.register(CourseDescriptionCell.self, forCellReuseIdentifier: CourseDescriptionCell.identifier)
     }
     
     /**

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CourseDetailVideoCell: UITableViewCell {
+class CourseTrailerCell: UITableViewCell {
     
     static public var identifier: String {
         return String(describing: self)
@@ -39,7 +39,7 @@ class CourseDetailVideoCell: UITableViewCell {
 }
 
 // MARK: - Setup views
-extension CourseDetailVideoCell {
+extension CourseTrailerCell {
     
     /**
      * Setup views
@@ -74,7 +74,7 @@ extension CourseDetailVideoCell {
 }
 
 // MARK: - Layout & constraints
-extension CourseDetailVideoCell {
+extension CourseTrailerCell {
     
     /**
      Add subviews

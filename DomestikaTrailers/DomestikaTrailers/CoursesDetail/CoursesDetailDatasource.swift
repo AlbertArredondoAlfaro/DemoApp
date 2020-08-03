@@ -9,8 +9,8 @@
 import UIKit
 
 enum CourseDetailRows: CaseIterable {
-    case video
-    case general
+    case trailer
+    case description
     case reviews
     case lessons
     case students
@@ -26,8 +26,18 @@ class CoursesDetailDatasource: NSObject {
 
 extension CoursesDetailDatasource {
 
-    private func generateVideoCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CourseDetailVideoCell.identifier, for: indexPath) as? CourseDetailVideoCell else { return UITableViewCell() }
+    private func generateTrailerCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CourseTrailerCell.identifier, for: indexPath) as? CourseTrailerCell else { return UITableViewCell() }
+        
+        //__ Bind the cell
+        guard let viewModel = viewModel else { return UITableViewCell() }
+        cell.bindWithViewModel(viewModel, at: indexPath.row)
+        
+        return cell
+    }
+    
+    private func generateCourseDescriptionCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CourseDescriptionCell.identifier, for: indexPath) as? CourseDescriptionCell else { return UITableViewCell() }
         
         //__ Bind the cell
         guard let viewModel = viewModel else { return UITableViewCell() }
@@ -42,7 +52,7 @@ extension CoursesDetailDatasource {
 extension CoursesDetailDatasource: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
         //return CourseDetailRows.allCases.count
     }
     
@@ -51,8 +61,10 @@ extension CoursesDetailDatasource: UITableViewDataSource {
         let row = CourseDetailRows.allCases[indexPath.row]
         
         switch row {
-        case .video:
-            return generateVideoCell(tableView, cellForRowAt: indexPath)
+        case .trailer:
+            return generateTrailerCell(tableView, cellForRowAt: indexPath)
+        case .description:
+            return generateCourseDescriptionCell(tableView, cellForRowAt: indexPath)
         default:
             return UITableViewCell()
         }
