@@ -35,7 +35,7 @@ extension BottomDatasource {
             return UICollectionViewCell()
         }
         
-        cell.bindWithViewModel(viewModel, at: indexPath.row - 1)
+        cell.bindWithViewModel(viewModel, at: indexPath.row)
         
         return cell
     }

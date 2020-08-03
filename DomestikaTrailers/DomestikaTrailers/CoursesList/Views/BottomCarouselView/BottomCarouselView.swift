@@ -51,7 +51,7 @@ extension BottomCarouselView {
      */
     private func configureSubviews() {
         titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .medium)
-        titleLabel.textColor = .black
+        titleLabel.textColor = .primaryTextColor
         titleLabel.text = "Popular"
         
         let flowLayout = UICollectionViewFlowLayout()
@@ -92,14 +92,6 @@ extension BottomCarouselView {
      Add subviews
      */
     private func addSubviews() {
-        addSubview(titleLabel)
-
-        titleLabel.snp.makeConstraints {
-            $0.left.equalTo(20.0)
-            $0.right.equalTo(-20.0)
-            $0.top.equalToSuperview().offset(40)
-            $0.height.equalTo(21.0)
-        }
         
         if let collectionView = collectionView {
             addSubview(collectionView)
@@ -107,7 +99,16 @@ extension BottomCarouselView {
                 $0.left.equalToSuperview()
                 $0.right.equalToSuperview()
                 $0.bottom.equalToSuperview()
-                $0.top.equalTo(titleLabel.snp.bottom)
+                $0.centerY.equalToSuperview()
+            }
+            
+            addSubview(titleLabel)
+
+            titleLabel.snp.makeConstraints {
+                $0.left.equalTo(20.0)
+                $0.right.equalTo(-20.0)
+                $0.bottom.equalTo(collectionView.snp.top).offset(40)
+                $0.height.equalTo(21.0)
             }
         }
     }
@@ -116,12 +117,22 @@ extension BottomCarouselView {
 // MARK: - UICollectionViewDelegate (with UICollectionViewDelegateFlowLayout)
 extension BottomCarouselView: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
+    /**
+     * Get the Course cell width. it depends on the screen width
+     */
+    private func getCellWidth() -> CGFloat {
+        let screenWidth: CGFloat = UIScreen.main.bounds.width
+        let cellContainerWidth: CGFloat = screenWidth - 150
+        return cellContainerWidth
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 300, height: 300)
+        let width = getCellWidth()
+        return CGSize(width: width, height: BottomCollectionViewCell.getHeight(for: width))
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 20.0, left: 20.0, bottom: 60.0, right: 20.0)
+        return UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

@@ -26,6 +26,8 @@
 		7F08183124D42D8D0090A993 /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08183024D42D8D0090A993 /* UIView+Shadow.swift */; };
 		7F08183324D431230090A993 /* UIVIew+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08183224D431230090A993 /* UIVIew+Rounded.swift */; };
 		7F08183524D7B0D70090A993 /* BottomDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08183424D7B0D70090A993 /* BottomDatasource.swift */; };
+		7F08183724D7C50D0090A993 /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F08183624D7C50D0090A993 /* Theme.xcassets */; };
+		7F08183924D7C5A90090A993 /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08183824D7C5A90090A993 /* UIColor+Theme.swift */; };
 		7F9852CE24D2A4CC00D8E1FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9852CD24D2A4CC00D8E1FC /* AppDelegate.swift */; };
 		7F9852D724D2A4CD00D8E1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F9852D624D2A4CD00D8E1FC /* Assets.xcassets */; };
 		7F9852DA24D2A4CD00D8E1FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9852D824D2A4CD00D8E1FC /* LaunchScreen.storyboard */; };
@@ -76,6 +78,8 @@
 		7F08183024D42D8D0090A993 /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		7F08183224D431230090A993 /* UIVIew+Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+Rounded.swift"; sourceTree = "<group>"; };
 		7F08183424D7B0D70090A993 /* BottomDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomDatasource.swift; sourceTree = "<group>"; };
+		7F08183624D7C50D0090A993 /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
+		7F08183824D7C5A90090A993 /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
 		7F9852CA24D2A4CC00D8E1FC /* DomestikaTrailers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DomestikaTrailers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9852CD24D2A4CC00D8E1FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F9852D624D2A4CD00D8E1FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 			children = (
 				7F08183024D42D8D0090A993 /* UIView+Shadow.swift */,
 				7F08183224D431230090A993 /* UIVIew+Rounded.swift */,
+				7F08183824D7C5A90090A993 /* UIColor+Theme.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 		7F9852FD24D2AC4100D8E1FC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7F08183624D7C50D0090A993 /* Theme.xcassets */,
 				7F9852D624D2A4CD00D8E1FC /* Assets.xcassets */,
 				7F9852D824D2A4CD00D8E1FC /* LaunchScreen.storyboard */,
 				7F9852DB24D2A4CD00D8E1FC /* Info.plist */,
@@ -426,6 +432,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F08183724D7C50D0090A993 /* Theme.xcassets in Resources */,
 				7F9852DA24D2A4CD00D8E1FC /* LaunchScreen.storyboard in Resources */,
 				7F9852D724D2A4CD00D8E1FC /* Assets.xcassets in Resources */,
 			);
@@ -560,6 +567,7 @@
 				7F08182124D3EDC50090A993 /* CoursesListViewModel.swift in Sources */,
 				7F08181724D3E7A80090A993 /* CourseListWorker.swift in Sources */,
 				7F08183324D431230090A993 /* UIVIew+Rounded.swift in Sources */,
+				7F08183924D7C5A90090A993 /* UIColor+Theme.swift in Sources */,
 				7F08182524D3FEFB0090A993 /* TopCarouselView.swift in Sources */,
 				7F08181E24D3EAA90090A993 /* BaseViewController.swift in Sources */,
 				7F08181024D2EC4E0090A993 /* CoursesListInteractor.swift in Sources */,
