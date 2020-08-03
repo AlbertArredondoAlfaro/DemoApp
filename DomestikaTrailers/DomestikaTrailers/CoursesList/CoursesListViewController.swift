@@ -13,6 +13,7 @@ class CoursesListViewController: BaseViewController {
     var presenter: CoursesListPresenterDelegate?
     
     private lazy var topCarouselView = TopCarouselView()
+    private lazy var bottomCarouselView = BottomCarouselView()
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -55,10 +56,16 @@ extension CoursesListViewController {
      */
     private func addSubviews() {
         self.view.addSubview(topCarouselView)
+        self.view.addSubview(bottomCarouselView)
         
         topCarouselView.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
             $0.bottom.equalTo(view.snp.centerY)
+        }
+        
+        bottomCarouselView.snp.makeConstraints {
+            $0.bottom.leading.trailing.equalToSuperview()
+            $0.top.equalTo(view.snp.centerY)
         }
     }
 
@@ -66,6 +73,12 @@ extension CoursesListViewController {
 
 // MARK: - CoursesListViewInjection
 extension CoursesListViewController: CoursesListViewInjection {
+    func loadBottomCarouselView(_ courses: [CoursesListViewModel]) {
+        DispatchQueue.main.async {
+            self.bottomCarouselView.configure(with: courses)
+        }
+    }
+    
     func loadTopCarouselView(_ courses: [CoursesListViewModel]) {
         DispatchQueue.main.async {
             self.topCarouselView.configure(with: courses)

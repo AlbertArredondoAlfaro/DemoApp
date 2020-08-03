@@ -42,8 +42,14 @@ extension CoursesListPresenter {
                 // TODO: we can show some error to the user here
                 return
             }
+            
+            // Load top carousel
             let firstFourItemsArray = Array(courses.prefix(4))
             self?.view?.loadTopCarouselView(firstFourItemsArray)
+            
+            // Load bottom carousel
+            let restOfItems = Array(courses.dropFirst(4))
+            self?.view?.loadBottomCarouselView(restOfItems)
         }
     }
 }

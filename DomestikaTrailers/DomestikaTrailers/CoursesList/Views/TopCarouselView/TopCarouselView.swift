@@ -99,8 +99,7 @@ extension TopCarouselView {
         self.addSubview(pageControl)
         pageControl.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview()
-            $0.top.equalTo(scrollView.snp.bottom)
-            $0.bottom.equalToSuperview().offset(-15)
+            $0.bottom.equalToSuperview().offset(-5)
         }
     }
 
