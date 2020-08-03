@@ -13,32 +13,6 @@ enum NetworkResult<T> {
     case failure(Error?)
 }
 
-struct DomestikaAsset: Decodable {
-    struct Teacher: Codable {
-        let name: String?
-        let avatarUrl: String?
-    }
-
-    struct Review: Codable {
-        let positive: Int?
-        let total: Int?
-    }
-    
-    let id: String?
-    let thumbnailUrl: String?
-    let title: String?
-    let trailerUrl: String?
-    let description: String?
-    let location: String?
-    let teacher: Teacher?
-    let reviews: Review?
-    let lessonsCount: Int?
-    let students: Int?
-    let audio: String?
-    let subtitles: [String]?
-    let level: String?
-}
-
 /**
 * NetworkManager
 * Class reponsable to make API requests
@@ -46,7 +20,7 @@ struct DomestikaAsset: Decodable {
 final class NetworkManager {
     
     let urlSession: URLSession
-    init(urlSession: URLSession = .shared) {
+    init (urlSession: URLSession = .shared) {
         self.urlSession = urlSession
     }
     

@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-
+use_frameworks!
 platform :ios, '13.0'
 
 target 'DomestikaTrailers' do
@@ -7,6 +7,12 @@ target 'DomestikaTrailers' do
 
 	## SnapKit: a wrapper on top of autolayout
 	pod 'SnapKit'
+  
+  ## HUD meant to display the progress of an ongoing task on iOS
+  pod 'SVProgressHUD'
+  
+  ## This library provides an async image downloader with cache support
+  pod 'SDWebImage'
 
   target 'DomestikaTrailersTests' do
     inherit! :search_paths
