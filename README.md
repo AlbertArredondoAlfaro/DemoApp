@@ -17,10 +17,10 @@ More info here: (https://cocoapods.org)
 
 ## Architecture
 
-I have used VIPER architecture to structure the different screens. I have based the VIPER architecture on this -> (https://github.com/rcasanovan/Xcode-VIPER-Architecture-Template)
+I have used VIPER architecture to structure the different screens. I have based the VIPER architecture on this -> (https://github.com/rcasanovan/Xcode-VIPER-Architecture-Template). Thanks Ricardo ;)
 
 
-##Network request
+## Network request
 
 I have used an API point provided by Domestika to get the assests for the courses. (http://mobile-assets.domestika.org/challenge/home.json)
 
