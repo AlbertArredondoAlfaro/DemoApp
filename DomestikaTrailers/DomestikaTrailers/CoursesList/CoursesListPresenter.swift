@@ -11,7 +11,7 @@ import UIKit
 class CoursesListPresenter {
     
     private weak var view: CoursesListViewInjection?
-    private let interactor: CoursesListInteractorDelegate
+    var interactor: CoursesListInteractorDelegate
     private let router: CoursesListRouterDelegate
     
     private var topCarouselAssets: [CourseViewModel] = []

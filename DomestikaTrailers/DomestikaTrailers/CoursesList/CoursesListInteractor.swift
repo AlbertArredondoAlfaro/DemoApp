@@ -9,7 +9,7 @@
 import Foundation
 
 class CoursesListInteractor {
-    let courseListWorker = DocumentListWorker()
+    var coursesListWorker = CoursesListWorker()
     var assets: [DomestikaAsset]?
 }
 
@@ -21,7 +21,7 @@ extension CoursesListInteractor: CoursesListInteractorDelegate {
      */
     func getAssets(completion: @escaping CoursesListGetAssetsCompletionBlock) {
         
-        courseListWorker.fetchAssets({ [weak self] assets in
+        coursesListWorker.fetchAssets({ [weak self] assets in
             completion(self?.generateViewModelsWith(assets: assets), nil)
         }, { error in
             completion(nil, error)

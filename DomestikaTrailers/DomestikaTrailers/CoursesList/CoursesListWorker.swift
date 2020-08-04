@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DocumentListWorker {
+class CoursesListWorker {
     //__ Network API client
     private let client = NetworkManager()
 
