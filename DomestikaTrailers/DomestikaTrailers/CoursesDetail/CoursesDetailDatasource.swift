@@ -9,7 +9,6 @@
 import UIKit
 
 enum CourseDetailRows: CaseIterable {
-    case trailer
     case description
     case reviews
     case lessons
@@ -25,16 +24,6 @@ class CoursesDetailDatasource: NSObject {
 }
 
 extension CoursesDetailDatasource {
-
-    private func generateTrailerCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CourseTrailerCell.identifier, for: indexPath) as? CourseTrailerCell else { return UITableViewCell() }
-        
-        //__ Bind the cell
-        guard let viewModel = viewModel else { return UITableViewCell() }
-        cell.bindWithViewModel(viewModel)
-        
-        return cell
-    }
     
     private func generateCourseDescriptionCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CourseDescriptionCell.identifier, for: indexPath) as? CourseDescriptionCell else { return UITableViewCell() }
@@ -109,8 +98,6 @@ extension CoursesDetailDatasource: UITableViewDataSource {
         let row = CourseDetailRows.allCases[indexPath.row]
         
         switch row {
-        case .trailer:
-            return generateTrailerCell(tableView, cellForRowAt: indexPath)
         case .description:
             return generateCourseDescriptionCell(tableView, cellForRowAt: indexPath)
         case .reviews, .lessons, .students, .audio, .subtitles:

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVKit
 
 class CoursesDetailViewController: BaseViewController {
     
@@ -14,6 +15,26 @@ class CoursesDetailViewController: BaseViewController {
     
     private var tableView: UITableView?
     private var datasource: CoursesDetailDatasource?
+    
+    var player: AVPlayer?
+    var playerViewController: AVPlayerViewController = AVPlayerViewController()
+    let seekDuration: Float64 = 10
+    
+    var goForwardButton: UIButton = {
+        let button = UIButton.init(type: .roundedRect)
+        button.setTitle("+10 sec", for: .normal)
+        button.addTarget(self, action: #selector(goForward), for: .touchUpInside)
+        button.setTitleColor(.primaryTextColor, for: .normal)
+        return button
+    }()
+    
+    var goBackwardButton: UIView = {
+        let button = UIButton.init(type: .roundedRect)
+        button.setTitle("-10 sec", for: .normal)
+        button.addTarget(self, action: #selector(goBackward), for: .touchUpInside)
+        button.setTitleColor(.primaryTextColor, for: .normal)
+        return button
+    }()
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -63,6 +84,8 @@ extension CoursesDetailViewController {
         tableView?.backgroundColor = .clear
         tableView?.showsVerticalScrollIndicator = false
         
+        playerViewController.view.backgroundColor = .white
+        
         registerCells()
         setupDatasource()
     }
@@ -95,10 +118,34 @@ extension CoursesDetailViewController {
      */
     private func addSubviews() {
         guard let tableView = tableView else { return }
-        self.view.addSubview(tableView)
+        view.addSubview(tableView)
+        view.addSubview(playerViewController.view)
+        
+        playerViewController.view.snp.makeConstraints {
+            $0.top.leading.trailing.equalToSuperview()
+            $0.height.equalTo(240)
+        }
+        
+        view.addSubview(goForwardButton)
+        view.addSubview(goBackwardButton)
+        
+        goBackwardButton.snp.makeConstraints {
+            $0.top.equalTo(playerViewController.view.snp.bottom)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalTo(view.snp.centerX)
+            $0.height.equalTo(21)
+        }
+        
+        goForwardButton.snp.makeConstraints {
+            $0.top.equalTo(playerViewController.view.snp.bottom)
+            $0.trailing.equalToSuperview()
+            $0.leading.equalTo(view.snp.centerX)
+            $0.height.equalTo(21)
+        }
         
         tableView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.equalTo(goForwardButton.snp.bottom)
+            $0.bottom.leading.trailing.equalToSuperview()
         }
     }
 
@@ -107,7 +154,44 @@ extension CoursesDetailViewController {
 // MARK: - CoursesDetailViewInjection
 extension CoursesDetailViewController: CoursesDetailViewInjection {
     func loadDataWithViewModel(with model: CourseViewModel) {
+        
+        guard let urlString = model.trailerUrl, let url = URL(string: urlString) else { return }
+        player = AVPlayer(url: url)
+        playerViewController.player = player
+        player?.play()
+        
         datasource?.viewModel = model
         tableView?.reloadData()
+    }
+}
+
+// MARK: - Actions
+extension CoursesDetailViewController {
+    
+    @objc func goForward() {
+        guard let duration  = player?.currentItem?.duration else { return }
+        guard let currentTime = player?.currentTime() else { return }
+        
+        let playerCurrentTime = CMTimeGetSeconds(currentTime)
+        let newTime = playerCurrentTime + seekDuration
+
+        if newTime < CMTimeGetSeconds(duration) {
+            let time: CMTime = CMTimeMake(value: Int64(newTime * 1000 as Float64), timescale: 1000)
+            player?.seek(to: time)
+        }
+    }
+    
+    @objc func goBackward() {
+        guard let currentTime = player?.currentTime() else { return }
+        let playerCurrentTime = CMTimeGetSeconds(currentTime)
+        var newTime = playerCurrentTime - seekDuration
+
+        if newTime < 0 {
+            newTime = 0
+        }
+        
+        let time: CMTime = CMTimeMake(value: Int64(newTime * 1000 as Float64), timescale: 1000)
+        player?.seek(to: time)
+
     }
 }
