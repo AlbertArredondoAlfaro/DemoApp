@@ -55,6 +55,7 @@ extension CoursesDetailViewController {
     private func setupViews() {
         self.view.backgroundColor = .white
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.navigationBar.shouldRemoveShadow(true)
         		
         //__ Create a custom back button
         let backButton = BackButton()
@@ -191,6 +192,5 @@ extension CoursesDetailViewController {
         
         let time: CMTime = CMTimeMake(value: Int64(newTime * 1000 as Float64), timescale: 1000)
         player?.seek(to: time)
-
     }
 }

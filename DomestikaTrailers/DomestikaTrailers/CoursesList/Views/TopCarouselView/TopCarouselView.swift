@@ -23,6 +23,7 @@ class TopCarouselView: UIView {
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.isPagingEnabled = true
+        scrollView.contentInsetAdjustmentBehavior = .never
         return scrollView
     }()
     

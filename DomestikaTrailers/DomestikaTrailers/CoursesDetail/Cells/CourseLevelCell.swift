@@ -62,6 +62,7 @@ extension CourseLevelCell {
      */
     private func setupViews() {
         backgroundColor = .white
+        selectionStyle = .none
         addSubviews()
     }
     

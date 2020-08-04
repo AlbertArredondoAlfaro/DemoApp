@@ -53,6 +53,8 @@ extension CourseDetailsCell {
      */
     private func setupViews() {
         backgroundColor = .white
+        selectionStyle = .none
+        
         addSubviews()
     }
     

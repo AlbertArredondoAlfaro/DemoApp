@@ -15,6 +15,9 @@ class CoursesListViewController: BaseViewController {
     private lazy var topCarouselView = TopCarouselView()
     private lazy var bottomCarouselView = BottomCarouselView()
     
+    private lazy var brandLogoImageView = UIImageView(image: UIImage(named: "Brand"))
+    private lazy var searchImageView = UIImageView(image: UIImage(named: "Search"))
+    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +29,7 @@ class CoursesListViewController: BaseViewController {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
@@ -43,9 +46,6 @@ extension CoursesListViewController {
         //__ Configure your view here
         //__ Background color, title, safe area
         self.view.backgroundColor = .white
-
-        // TODO: fix
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         configureSubviews()
         addSubviews()
@@ -70,6 +70,20 @@ extension CoursesListViewController {
     private func addSubviews() {
         view.addSubview(topCarouselView)
         view.addSubview(bottomCarouselView)
+        view.addSubview(brandLogoImageView)
+        view.addSubview(searchImageView)
+        
+        brandLogoImageView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(40)
+            $0.leading.equalToSuperview().offset(30)
+            $0.width.height.equalTo(38)
+        }
+    
+        searchImageView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(20)
+            $0.trailing.equalToSuperview().offset(-10)
+            $0.width.height.equalTo(78)
+        }
         
         topCarouselView.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
