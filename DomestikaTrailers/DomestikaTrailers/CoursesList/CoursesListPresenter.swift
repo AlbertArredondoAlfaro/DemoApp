@@ -14,6 +14,9 @@ class CoursesListPresenter {
     private let interactor: CoursesListInteractorDelegate
     private let router: CoursesListRouterDelegate
     
+    private var topCarouselAssets: [CourseViewModel] = []
+    private var bottomCarouselAssets: [CourseViewModel] = []
+    
     // MARK: Lifecycle
     init(view: CoursesListViewInjection, navigationController: UINavigationController? = nil) {
         self.view = view
@@ -25,6 +28,16 @@ class CoursesListPresenter {
 
 // MARK: - CoursesListPresenterDelegate
 extension CoursesListPresenter: CoursesListPresenterDelegate {
+    func watchBottomCarouselCourse(at index: Int) {
+        let viewModel = bottomCarouselAssets[index]
+        router.showCourseDetailWithViewModel(viewModel)
+    }
+    
+    func watchTopCarouselCourse(at index: Int) {
+        let viewModel = topCarouselAssets[index]
+        router.showCourseDetailWithViewModel(viewModel)
+    }
+    
     func viewDidLoad() {
         getAssets(showLoader: true)
     }
@@ -37,19 +50,21 @@ extension CoursesListPresenter {
         view?.showLoader(showLoader)
         
         interactor.getAssets { [weak self] (courses, error) in
-            self?.view?.showLoader(false)
+            guard let `self` = self else { return }
+            
+            self.view?.showLoader(false)
             guard let courses = courses else {
                 // TODO: we can show some error to the user here
                 return
             }
             
             // Load top carousel
-            let firstFourItemsArray = Array(courses.prefix(4))
-            self?.view?.loadTopCarouselView(firstFourItemsArray)
+            self.topCarouselAssets = Array(courses.prefix(4))
+            self.view?.loadTopCarouselView(self.topCarouselAssets)
             
             // Load bottom carousel
-            let restOfItems = Array(courses.dropFirst(4))
-            self?.view?.loadBottomCarouselView(restOfItems)
+            self.bottomCarouselAssets = Array(courses.dropFirst(4))
+            self.view?.loadBottomCarouselView(self.bottomCarouselAssets)
         }
     }
 }

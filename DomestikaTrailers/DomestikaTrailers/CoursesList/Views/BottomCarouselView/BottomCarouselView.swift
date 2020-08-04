@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol BottomCarouselViewDelegate: class {
+    func watchCourseTappedAtIndex(index: Int)
+}
+
 class BottomCarouselView: UIView {
     
     private let titleLabel: UILabel = UILabel()
     private var collectionView: UICollectionView?
     private var datasource: BottomDatasource?
+    
+    public weak var delegate: BottomCarouselViewDelegate?
         
     // MARK: Lifecycle
     override init(frame: CGRect) {
@@ -25,7 +31,7 @@ class BottomCarouselView: UIView {
         setupViews()
     }
     
-    public func configure(with viewModel: [CoursesListViewModel]) {
+    public func configure(with viewModel: [CourseViewModel]) {
         datasource?.items = viewModel
         collectionView?.reloadData()
     }
@@ -38,8 +44,6 @@ extension BottomCarouselView {
      Setup views
      */
     private func setupViews() {
-        //__ Configure your view here
-        //__ Background color, title, safe area
         self.backgroundColor = .white
         
         configureSubviews()
@@ -74,12 +78,11 @@ extension BottomCarouselView {
     }
     
     /**
-     * Setup datasource for the suggestions table view
+     * Setup datasource for the collectionView
      */
     private func setupDatasource() {
         if let collectionView = collectionView {
             datasource = BottomDatasource()
-            //datasource?.delegate = self
             collectionView.dataSource = datasource
         }
     }
@@ -144,7 +147,7 @@ extension BottomCarouselView: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //delegate?.attachmentSelectedAt(indexPath.row)
+        delegate?.watchCourseTappedAtIndex(index: indexPath.row)
     }
 
 }

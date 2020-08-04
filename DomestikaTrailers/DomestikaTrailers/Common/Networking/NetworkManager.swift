@@ -8,6 +8,9 @@
 
 import Foundation
 
+typealias SuccessHandler<T> = ((T) -> Void)?
+typealias FailureHandler = ((Error?) -> Void)?
+
 enum NetworkResult<T> {
     case success([T])
     case failure(Error?)

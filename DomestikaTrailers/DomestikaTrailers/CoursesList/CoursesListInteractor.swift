@@ -16,7 +16,7 @@ class CoursesListInteractor {
 // MARK: - CoursesListInteractorDelegate
 extension CoursesListInteractor: CoursesListInteractorDelegate {
     /**
-     Get assets with completion
+     * Get assets with completion
      - parameter completion: CoursesListGetAssetsCompletionBlock completion block
      */
     func getAssets(completion: @escaping CoursesListGetAssetsCompletionBlock) {
@@ -37,9 +37,9 @@ extension CoursesListInteractor {
      - parameter assets: DomestikaAsset  array to evaluate
      - returns: an optional CourseListViewModel array
      */
-    private func generateViewModelsWith(assets: [DomestikaAsset]) -> [CoursesListViewModel]? {
+    private func generateViewModelsWith(assets: [DomestikaAsset]) -> [CourseViewModel]? {
         //__ Get the view models
-        let viewModels = CoursesListViewModel.getViewModelsWith(assets)
+        let viewModels = CourseViewModel.getViewModelsWith(assets)
         return viewModels
     }
 }

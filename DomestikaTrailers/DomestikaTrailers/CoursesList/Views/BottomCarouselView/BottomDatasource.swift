@@ -10,8 +10,7 @@ import UIKit
 
 class BottomDatasource: NSObject {
     
-    //public weak var delegate: AttachmentsDatasourceDelegate?
-    public var items: [CoursesListViewModel]
+    public var items: [CourseViewModel]
     
     public override init() {
         self.items = []
@@ -30,7 +29,7 @@ extension BottomDatasource {
      *      -collectionView: the current collection view
      *      -indexPath: index path to process
      */
-    private func generateCellForCourseWithViewModel(_ viewModel: CoursesListViewModel, in collectionView: UICollectionView, at indexPath: IndexPath) -> UICollectionViewCell {
+    private func generateCellForCourseWithViewModel(_ viewModel: CourseViewModel, in collectionView: UICollectionView, at indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BottomCollectionViewCell.identifier, for: indexPath) as? BottomCollectionViewCell else {
             return UICollectionViewCell()
         }

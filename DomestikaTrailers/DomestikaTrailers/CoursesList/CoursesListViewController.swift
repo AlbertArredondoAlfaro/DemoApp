@@ -15,6 +15,9 @@ class CoursesListViewController: BaseViewController {
     private lazy var topCarouselView = TopCarouselView()
     private lazy var bottomCarouselView = BottomCarouselView()
     
+    private lazy var brandLogoImageView = UIImageView(image: UIImage(named: "Brand"))
+    private lazy var searchImageView = UIImageView(image: UIImage(named: "Search"))
+    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +25,15 @@ class CoursesListViewController: BaseViewController {
         presenter?.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 }
 
 // MARK: - Setup views
@@ -31,8 +43,6 @@ extension CoursesListViewController {
      Setup views
      */
     private func setupViews() {
-        //__ Configure your view here
-        //__ Background color, title, safe area
         self.view.backgroundColor = .white
         
         configureSubviews()
@@ -43,7 +53,8 @@ extension CoursesListViewController {
      Configure subviews
      */
     private func configureSubviews() {
-        //__ Configure all the subviews here
+        topCarouselView.delegate = self
+        bottomCarouselView.delegate = self
     }
     
 }
@@ -55,8 +66,22 @@ extension CoursesListViewController {
      Add subviews
      */
     private func addSubviews() {
-        self.view.addSubview(topCarouselView)
-        self.view.addSubview(bottomCarouselView)
+        view.addSubview(topCarouselView)
+        view.addSubview(bottomCarouselView)
+        view.addSubview(brandLogoImageView)
+        view.addSubview(searchImageView)
+        
+        brandLogoImageView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(40)
+            $0.leading.equalToSuperview().offset(30)
+            $0.width.height.equalTo(38)
+        }
+    
+        searchImageView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(20)
+            $0.trailing.equalToSuperview().offset(-10)
+            $0.width.height.equalTo(78)
+        }
         
         topCarouselView.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
@@ -73,13 +98,13 @@ extension CoursesListViewController {
 
 // MARK: - CoursesListViewInjection
 extension CoursesListViewController: CoursesListViewInjection {
-    func loadBottomCarouselView(_ courses: [CoursesListViewModel]) {
+    func loadBottomCarouselView(_ courses: [CourseViewModel]) {
         DispatchQueue.main.async {
             self.bottomCarouselView.configure(with: courses)
         }
     }
     
-    func loadTopCarouselView(_ courses: [CoursesListViewModel]) {
+    func loadTopCarouselView(_ courses: [CourseViewModel]) {
         DispatchQueue.main.async {
             self.topCarouselView.configure(with: courses)
         }
@@ -91,5 +116,19 @@ extension CoursesListViewController: CoursesListViewInjection {
         } else {
             hideProgress()
         }
+    }
+}
+
+// MARK: - TopCarouselViewDelegate
+extension CoursesListViewController: TopCarouselViewDelegate {
+    func watchCourseAtIndex(index: Int) {
+        presenter?.watchTopCarouselCourse(at: index)
+    }
+}
+
+// MARK: - BottomCarouselViewDelegate
+extension CoursesListViewController: BottomCarouselViewDelegate {
+    func watchCourseTappedAtIndex(index: Int) {
+        presenter?.watchBottomCarouselCourse(at: index)
     }
 }

@@ -8,8 +8,14 @@
 
 import UIKit
 
+protocol TopCarouselViewDelegate: class {
+    func watchCourseAtIndex(index: Int)
+}
+
 class TopCarouselView: UIView {
-        
+    
+    public weak var delegate: TopCarouselViewDelegate?
+    
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -17,6 +23,7 @@ class TopCarouselView: UIView {
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.isPagingEnabled = true
+        scrollView.contentInsetAdjustmentBehavior = .never
         return scrollView
     }()
     
@@ -34,6 +41,7 @@ class TopCarouselView: UIView {
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         pageControl.currentPageIndicatorTintColor = .white
         pageControl.pageIndicatorTintColor = UIColor.white.withAlphaComponent(0.5)
+        pageControl.isUserInteractionEnabled = false
         return pageControl
     }()
     
@@ -48,15 +56,16 @@ class TopCarouselView: UIView {
         setupViews()
     }
     
-    func configure(with viewModel: [CoursesListViewModel]) {
-        for model in viewModel {
+    func configure(with viewModel: [CourseViewModel]) {
+        for (index, model) in viewModel.enumerated() {
             let topView = TopView()
-            topView.configure(with: model)
+            topView.configure(with: model, at: index)
             stackView.addArrangedSubview(topView)
             topView.snp.makeConstraints {
                 $0.width.equalTo(scrollView.snp.width)
                 $0.height.equalTo(scrollView.snp.height)
             }
+            topView.delegate = self
         }
         
         pageControl.numberOfPages = viewModel.count
@@ -105,9 +114,18 @@ extension TopCarouselView {
 
 }
 
+// MARK: - UIScrollViewDelegate
 extension TopCarouselView: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
         pageControl.currentPage = Int(pageNumber)
     }
 }
+
+// MARK: - TopViewDelegate
+extension TopCarouselView: TopViewDelegate {
+    func watchCourseTappedAtIndex(index: Int) {
+        delegate?.watchCourseAtIndex(index: index)
+    }
+}
+

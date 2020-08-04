@@ -105,7 +105,7 @@ extension BottomCollectionViewCell {
      * Configure subviews
      */
     private func configureSubviews() {
-        watchCourseLabel.text = "Ver curso"
+        watchCourseLabel.text = "Watch course"
     }
     
     /**
@@ -115,18 +115,16 @@ extension BottomCollectionViewCell {
      *      -viewModel: CoursesListViewModel
      *      -index: the current index
      */
-    public func bindWithViewModel(_ viewModel: CoursesListViewModel, at index: Int) {
+    public func bindWithViewModel(_ viewModel: CourseViewModel, at index: Int) {
         guard let urlString = viewModel.thumbnailUrl else {
-            // Or configure with a placeholder image
+            // Here we can use a placeholder image in case we don't have an avatar url or if the url is not valid
             return
         }
         self.imageView.sd_setImage(with: URL(string: urlString))
         self.titleLabel.text = viewModel.title
         if let name = viewModel.teacherName {
-            self.teacherLabel.text = String(format: "de %@", name)
+            self.teacherLabel.text = String(format: "from %@", name)
         }
-        
-        //self.index = index
         
         self.imageView.applyRoundedCorner(.top)
     }
