@@ -28,6 +28,11 @@ class CoursesListPresenter {
 
 // MARK: - CoursesListPresenterDelegate
 extension CoursesListPresenter: CoursesListPresenterDelegate {
+    func watchBottomCarouselCourse(at index: Int) {
+        let viewModel = bottomCarouselAssets[index]
+        router.showCourseDetailWithViewModel(viewModel)
+    }
+    
     func watchTopCarouselCourse(at index: Int) {
         let viewModel = topCarouselAssets[index]
         router.showCourseDetailWithViewModel(viewModel)

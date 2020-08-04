@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol BottomCarouselViewDelegate: class {
+    func watchCourseTappedAtIndex(index: Int)
+}
+
 class BottomCarouselView: UIView {
     
     private let titleLabel: UILabel = UILabel()
     private var collectionView: UICollectionView?
     private var datasource: BottomDatasource?
+    
+    public weak var delegate: BottomCarouselViewDelegate?
         
     // MARK: Lifecycle
     override init(frame: CGRect) {
@@ -79,7 +85,6 @@ extension BottomCarouselView {
     private func setupDatasource() {
         if let collectionView = collectionView {
             datasource = BottomDatasource()
-            //datasource?.delegate = self
             collectionView.dataSource = datasource
         }
     }
@@ -144,7 +149,7 @@ extension BottomCarouselView: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //delegate?.attachmentSelectedAt(indexPath.row)
+        delegate?.watchCourseTappedAtIndex(index: indexPath.row)
     }
 
 }

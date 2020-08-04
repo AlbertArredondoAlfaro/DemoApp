@@ -56,6 +56,7 @@ extension CoursesListViewController {
      */
     private func configureSubviews() {
         topCarouselView.delegate = self
+        bottomCarouselView.delegate = self
     }
     
 }
@@ -110,5 +111,12 @@ extension CoursesListViewController: CoursesListViewInjection {
 extension CoursesListViewController: TopCarouselViewDelegate {
     func watchCourseAtIndex(index: Int) {
         presenter?.watchTopCarouselCourse(at: index)
+    }
+}
+
+// MARK: - BottomCarouselViewDelegate
+extension CoursesListViewController: BottomCarouselViewDelegate {
+    func watchCourseTappedAtIndex(index: Int) {
+        presenter?.watchBottomCarouselCourse(at: index)
     }
 }

@@ -105,7 +105,7 @@ extension BottomCollectionViewCell {
      * Configure subviews
      */
     private func configureSubviews() {
-        watchCourseLabel.text = "Ver curso"
+        watchCourseLabel.text = "Watch course"
     }
     
     /**
@@ -123,10 +123,8 @@ extension BottomCollectionViewCell {
         self.imageView.sd_setImage(with: URL(string: urlString))
         self.titleLabel.text = viewModel.title
         if let name = viewModel.teacherName {
-            self.teacherLabel.text = String(format: "de %@", name)
+            self.teacherLabel.text = String(format: "from %@", name)
         }
-        
-        //self.index = index
         
         self.imageView.applyRoundedCorner(.top)
     }

@@ -18,6 +18,7 @@ protocol CoursesListViewInjection : AnyObject {
 protocol CoursesListPresenterDelegate : AnyObject {
     func viewDidLoad()
     func watchTopCarouselCourse(at index: Int)
+    func watchBottomCarouselCourse(at index: Int)
 }
 
 // Presenter / Interactor
