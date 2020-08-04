@@ -96,7 +96,7 @@ extension CourseDescriptionCell {
      * Bind component
      *
      * - parameters:
-     *      -viewModel: CoursesListViewModel
+     *   -viewModel: CoursesListViewModel
      */
     public func bindWithViewModel(_ viewModel: CourseViewModel) {
         courseTitleLabel.text = viewModel.title
@@ -105,7 +105,7 @@ extension CourseDescriptionCell {
         locationLabel.text = viewModel.location
         
         guard let urlString = viewModel.teacherAvatarUrl, let url = URL (string: urlString) else {
-            // Here we can use a placeholder image in case we don't have an avatar url or if the url is not valid
+            // __ Here we can use a placeholder image in case we don't have an avatar url or if the url is not valid
             return
         }
         avatarImageView.sd_setImage(with: url)

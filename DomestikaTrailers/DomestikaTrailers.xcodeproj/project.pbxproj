@@ -16,7 +16,6 @@
 		7F08181024D2EC4E0090A993 /* CoursesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08180B24D2EC4E0090A993 /* CoursesListInteractor.swift */; };
 		7F08181524D3E6F30090A993 /* DomestikaAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08181424D3E6F30090A993 /* DomestikaAsset.swift */; };
 		7F08181724D3E7A80090A993 /* CourseListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08181624D3E7A80090A993 /* CourseListWorker.swift */; };
-		7F08181924D3E8DC0090A993 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08181824D3E8DC0090A993 /* Utilities.swift */; };
 		7F08181E24D3EAA90090A993 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08181D24D3EAA90090A993 /* BaseViewController.swift */; };
 		7F08182124D3EDC50090A993 /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08182024D3EDC50090A993 /* CourseViewModel.swift */; };
 		7F08182524D3FEFB0090A993 /* TopCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08182424D3FEFB0090A993 /* TopCarouselView.swift */; };
@@ -79,7 +78,6 @@
 		7F08180B24D2EC4E0090A993 /* CoursesListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesListInteractor.swift; sourceTree = "<group>"; };
 		7F08181424D3E6F30090A993 /* DomestikaAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomestikaAsset.swift; sourceTree = "<group>"; };
 		7F08181624D3E7A80090A993 /* CourseListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListWorker.swift; sourceTree = "<group>"; };
-		7F08181824D3E8DC0090A993 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		7F08181D24D3EAA90090A993 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		7F08182024D3EDC50090A993 /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
 		7F08182424D3FEFB0090A993 /* TopCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCarouselView.swift; sourceTree = "<group>"; };
@@ -190,14 +188,6 @@
 				7F08181424D3E6F30090A993 /* DomestikaAsset.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		7F08181A24D3E8EC0090A993 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				7F08181824D3E8DC0090A993 /* Utilities.swift */,
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 		7F08181B24D3EA920090A993 /* UI */ = {
@@ -365,7 +355,6 @@
 				7F08182F24D42D7C0090A993 /* Extensions */,
 				7F08181B24D3EA920090A993 /* UI */,
 				7F08181224D3E6BD0090A993 /* Networking */,
-				7F08181A24D3E8EC0090A993 /* Utilities */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -647,7 +636,6 @@
 				7F08184224D7CC4E0090A993 /* CoursesDetailViewController.swift in Sources */,
 				7F08184A24D7E41E0090A993 /* BackButton.swift in Sources */,
 				7F08185124D83D8A0090A993 /* CourseDescriptionCell.swift in Sources */,
-				7F08181924D3E8DC0090A993 /* Utilities.swift in Sources */,
 				7F08184124D7CC4E0090A993 /* CoursesDetailRouter.swift in Sources */,
 				7F08180F24D2EC4E0090A993 /* CoursesListProtocols.swift in Sources */,
 			);

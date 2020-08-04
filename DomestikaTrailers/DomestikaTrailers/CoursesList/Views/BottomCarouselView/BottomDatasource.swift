@@ -10,7 +10,6 @@ import UIKit
 
 class BottomDatasource: NSObject {
     
-    //public weak var delegate: AttachmentsDatasourceDelegate?
     public var items: [CourseViewModel]
     
     public override init() {

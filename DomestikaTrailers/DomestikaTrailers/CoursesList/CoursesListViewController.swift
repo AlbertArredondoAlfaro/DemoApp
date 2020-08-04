@@ -43,8 +43,6 @@ extension CoursesListViewController {
      Setup views
      */
     private func setupViews() {
-        //__ Configure your view here
-        //__ Background color, title, safe area
         self.view.backgroundColor = .white
         
         configureSubviews()

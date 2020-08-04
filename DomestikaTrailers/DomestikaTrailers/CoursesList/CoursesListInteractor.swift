@@ -16,7 +16,7 @@ class CoursesListInteractor {
 // MARK: - CoursesListInteractorDelegate
 extension CoursesListInteractor: CoursesListInteractorDelegate {
     /**
-     Get assets with completion
+     * Get assets with completion
      - parameter completion: CoursesListGetAssetsCompletionBlock completion block
      */
     func getAssets(completion: @escaping CoursesListGetAssetsCompletionBlock) {

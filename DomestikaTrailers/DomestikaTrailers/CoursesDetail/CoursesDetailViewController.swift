@@ -60,6 +60,7 @@ extension CoursesDetailViewController {
         //__ Create a custom back button
         let backButton = BackButton()
         backButton.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
+        
         //__ Set the left bar button item
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
         
@@ -101,7 +102,7 @@ extension CoursesDetailViewController {
     }
     
     /**
-     * Setup datasource for the collectionView
+     * Setup datasource for the tableView
      */
     private func setupDatasource() {
         datasource = CoursesDetailDatasource()

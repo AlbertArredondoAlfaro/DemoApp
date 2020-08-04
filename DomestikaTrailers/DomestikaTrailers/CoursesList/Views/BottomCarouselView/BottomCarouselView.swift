@@ -44,8 +44,6 @@ extension BottomCarouselView {
      Setup views
      */
     private func setupViews() {
-        //__ Configure your view here
-        //__ Background color, title, safe area
         self.backgroundColor = .white
         
         configureSubviews()
