@@ -18,8 +18,4 @@ target 'DomestikaTrailers' do
     inherit! :search_paths
     # Pods for testing
   end
-
-  target 'DomestikaTrailersUITests' do
-    # Pods for testing
-  end
 end
