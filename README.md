@@ -5,8 +5,8 @@ The goal is to create an iOS App to display a list of Domestika's course trailer
 
 ## Requirements
 
-* xCode 11.6
-* Cocoapods 1.9.3
+* xCode 12
+* Cocoapods 1.11.2
 
 
 ## Setup
